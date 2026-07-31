@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Click Me</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#menu{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+button{
+    width:350px;
+    padding:20px;
+    font-size:28px;
+    font-weight:bold;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#dont{
+    background:#d60000;
+    color:white;
+}
+
+#click{
+    background:#0080ff;
+    color:white;
+}
+
+#sigma{
+    background:gold;
+    color:black;
+}
+
+#viewer{
+    display:none;
+    text-align:center;
+}
+
+#viewer img{
+    width:600px;
+    max-width:95%;
+    border-radius:20px;
+    box-shadow:0 0 30px black;
+}
+
+#back{
+    margin-top:30px;
+    background:#333;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="menu">
+
+<button id="dont" onclick="showImage('patrickbateman.jpg')">
+🗿 CLICK IF YOU ARE A SIGMA
+</button>
+
+<button id="click" onclick="showImage('thomasshelby.jpg')">
+✅ CLICK ME
+</button>
+
+<button id="sigma" onclick="showImage('laurenz.jpg.png')">
+🚫 DON'T CLICK ME
+</button>
+
+</div>
+
+<div id="viewer">
+
+<img id="image">
+
+<br>
+
+<button id="back" onclick="goBack()">
+⬅ Zurück
+</button>
+
+</div>
+
+<script>
+
+function showImage(datei){
+
+    document.getElementById("menu").style.display="none";
+
+    document.getElementById("viewer").style.display="block";
+
+    document.getElementById("image").src=datei;
+
+}
+
+function goBack(){
+
+    document.getElementById("viewer").style.display="none";
+
+    document.getElementById("menu").style.display="flex";
+
+}
+
+</script>
+
+</body>
+</html>
